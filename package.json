@@ -1,0 +1,46 @@
+{
+  "name": "awaitable-pool",
+  "version": "0.0.0",
+  "description": "Object pool with an async checkout function.",
+  "main": "dist/awaitable-pool.js",
+  "types": "dist/awaitable-pool.d.ts",
+  "files": [
+    "dist/awaitable-pool.js",
+    "dist/awaitable-pool.js.map",
+    "dist/awaitable-pool.d.ts",
+    "dist/awaitable-pool.d.ts.map"
+  ],
+  "scripts": {
+    "test": "tape dist/test/*.js",
+    "tsc": "tsc",
+    "tsc:clean": "rm -rf ./dist/*",
+    "tsc:watch": "tsc --watch",
+    "lint": "prettier -c src/**/*.ts",
+    "lint:fix": "prettier --write src/**/*.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/thlorenz/awaitable-pool.git"
+  },
+  "homepage": "https://github.com/thlorenz/awaitable-pool",
+  "dependencies": {},
+  "devDependencies": {
+    "@types/tape": "^4.2.34",
+    "prettier": "^2.0.4",
+    "tape": "^4.13.2"
+  },
+  "keywords": [
+    "pool",
+    "promise",
+    "async"
+  ],
+  "author": {
+    "name": "Thorsten Lorenz",
+    "email": "thlorenz@gmx.de",
+    "url": "http://thlorenz.com"
+  },
+  "license": "MIT",
+  "engine": {
+    "node": ">=10"
+  }
+}
