@@ -1,4 +1,4 @@
-export type ItemWithID = { id: string }
+export type ItemWithID = { id: string; dispose?: () => Promise<void> }
 
 export class AwaitablePool<T extends ItemWithID> {
   private readonly _available: Set<string>
@@ -53,6 +53,18 @@ export class AwaitablePool<T extends ItemWithID> {
     const pending = this._pendingCheckouts[0]
     this._pendingCheckouts.shift()
     pending(item)
+  }
+
+  async dispose() {
+    this._available.clear()
+    for (const item of this._items.values()) {
+      try {
+        if (typeof item.dispose === 'function') await item.dispose()
+      } catch (err) {
+        console.error(`Error when disposing ${item.id}`)
+        console.error(err)
+      }
+    }
   }
 
   private _checkout(): T | undefined {
