@@ -41,6 +41,13 @@ checked out 1
 
     npm install awaitable-pool
 
+## Alternatives
+
+This library is small and thus also only serves a small spectrum of use cases.
+If you want a more complete implementation have a look at either of the following.
+
+- [tarn](https://github.com/Vincit/tarn.js)
+
 ## LICENSE
 
 MIT
