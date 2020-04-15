@@ -1,4 +1,7 @@
-export type ItemWithID = { id: string; dispose?: () => Promise<void> }
+export type ItemWithID = {
+  id: string
+  dispose?: () => Promise<void> | void
+}
 
 export class AwaitablePool<T extends ItemWithID> {
   private readonly _available: Set<string>
@@ -65,6 +68,7 @@ export class AwaitablePool<T extends ItemWithID> {
         console.error(err)
       }
     }
+    this._items.clear()
   }
 
   private _checkout(): T | undefined {
