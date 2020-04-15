@@ -1,6 +1,6 @@
 {
   "name": "awaitable-pool",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Object pool with an async checkout function.",
   "main": "dist/awaitable-pool.js",
   "types": "dist/awaitable-pool.d.ts",
